@@ -31,16 +31,15 @@ class Third extends React.Component{
 		return (
 			<div className='third'>
 				<div className='thi1'>
-					<Title name={TITLE[0]} handleControl = { this.handleControl.bind(this, TITLE[0]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[1]} handleControl = { this.handleControl.bind(this, TITLE[1]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[2]} handleControl = { this.handleControl.bind(this, TITLE[2]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[3]} handleControl = { this.handleControl.bind(this, TITLE[3]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[4]} handleControl = { this.handleControl.bind(this, TITLE[4]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[5]} handleControl = { this.handleControl.bind(this, TITLE[5]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[6]} handleControl = { this.handleControl.bind(this, TITLE[6]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[7]} handleControl = { this.handleControl.bind(this, TITLE[7]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[8]} handleControl = { this.handleControl.bind(this, TITLE[8]) } moveOut={this.moveOut.bind(this)}/>
-					<Title name={TITLE[9]} handleControl = { this.handleControl.bind(this, TITLE[9]) } moveOut={this.moveOut.bind(this)}/>
+					{ TITLE.map((t)=>{
+						return (
+							<Title 
+								name={t} 
+								handleControl={this.handleControl.bind(this, t)}
+								moveOut={this.moveOut.bind(this)}
+							/>
+						)
+					}) }
 				</div>
 				<TableControl control={this.state.control} />
 			</div>
